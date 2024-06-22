@@ -13,6 +13,7 @@ export function Header() {
         <header className={s.header}>
             {
                 HEADER_LINK.map(link => <Button
+                    size='xs'
                     component={Link}
                     key={link.title}
                     href={link.href}

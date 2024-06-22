@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import s from './Slider.module.scss'
 import { PostType } from '@/types';
-import { Button, Paper, Text, Title } from '@mantine/core';
+import { Card } from '@/components';
 
 export function Slider({ posts }: { posts: PostType[] }) {
     return (
@@ -18,14 +18,7 @@ export function Slider({ posts }: { posts: PostType[] }) {
             {
                 posts.map(post =>
                     <SwiperSlide className={s.slider__slide} key={post.id}>
-                        <Paper shadow="md" p="xl" radius="md" className={s.card}>
-                            <Text lineClamp={3} size="sm" className={s.card__text}>
-                                {post.body}
-                            </Text>
-                            <Title order={3} lineClamp={2} className={s.card__text}>
-                                {post.title}
-                            </Title>
-                        </Paper>
+                        <Card post={post} />
                     </SwiperSlide>)
             }
         </Swiper >

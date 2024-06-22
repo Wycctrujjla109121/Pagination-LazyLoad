@@ -1,9 +1,15 @@
 import { Slider } from "@/modules/index.client";
 import { Flex, Text } from "@mantine/core";
 import axios from "axios";
+import qs from "qs";
 
 export default async function Home() {
-  const resPosts = await axios.get(`${process.env.NEXT_PUBLIC_API}posts?_start=0&_limit=10`)
+  const qeryString = qs.stringify({
+    _start: 0,
+    _limit: 10
+  })
+
+  const resPosts = await axios.get(`${process.env.NEXT_PUBLIC_API}posts?${qeryString}`)
     .then(res => res.data)
     .catch(error => console.error(error))
 
@@ -15,7 +21,6 @@ export default async function Home() {
 
   return (
     <main>
-      Главная страница
       <Slider posts={resPosts} />
     </main>
   );

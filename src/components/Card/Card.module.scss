@@ -1,0 +1,21 @@
+.card {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 100%;
+    max-width: 350px;
+    height: 100%;
+    min-height: 400px;
+
+    background: url('https://images.unsplash.com/photo-1508193638397-1c4234db14d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__text {
+        filter: invert(1);
+        mix-blend-mode: difference;
+    }
+}
