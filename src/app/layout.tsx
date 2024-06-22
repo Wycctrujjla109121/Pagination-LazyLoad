@@ -1,7 +1,11 @@
-import type { Metadata } from "next";
-import "./globals.scss";
+import { Header } from "@/modules/index.client";
 import { MantineProvider } from "@mantine/core";
+import type { Metadata } from "next";
+
 import '@mantine/core/styles.css';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import "./globals.scss";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,6 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <MantineProvider>
+          <Header />
           {children}
         </MantineProvider>
       </body>
