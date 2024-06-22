@@ -8,6 +8,7 @@ import qs from 'qs';
 import { useEffect, useMemo, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { ListSimpleGrid } from '../ListSimpleGrid';
+import { ErrorMessage } from '../ErrorMessage';
 
 const limit = 10
 export function LazyLoadList() {
@@ -46,8 +47,7 @@ export function LazyLoadList() {
     }, [inView])
 
     if (error) {
-        return <>
-        </>
+        return <ErrorMessage />
     }
 
     return (

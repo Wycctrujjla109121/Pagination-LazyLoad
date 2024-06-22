@@ -1,5 +1,5 @@
 import { Slider } from "@/modules";
-import { Flex, Text } from "@mantine/core";
+import { ErrorMessage } from "@/modules/ErrorMessage";
 import axios from "axios";
 import qs from "qs";
 
@@ -14,9 +14,7 @@ export default async function Home() {
     .catch(error => console.error(error))
 
   if (!resPosts) {
-    return <Flex align={'center'} justify={'center'}>
-      <Text size="md">Sorry fetch failed, try again</Text>
-    </Flex>
+    return <ErrorMessage />
   }
 
   return (
