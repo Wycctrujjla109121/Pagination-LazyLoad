@@ -1,4 +1,4 @@
-import { PaginationList } from "@/modules/PaginationList";
+import { PaginationList } from "@/modules";
 import { Flex, Text } from "@mantine/core";
 import axios from "axios";
 import qs from "qs";

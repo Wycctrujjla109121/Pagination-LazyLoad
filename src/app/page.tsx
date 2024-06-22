@@ -1,4 +1,4 @@
-import { Slider } from "@/modules/index.client";
+import { Slider } from "@/modules";
 import { Flex, Text } from "@mantine/core";
 import axios from "axios";
 import qs from "qs";
